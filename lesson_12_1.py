@@ -71,23 +71,13 @@ def test_iframe():
     iframe.switch_to_default_content()
     browser.shutdown()
 
-def test_iframe_fail():
-    browser = Browser(URL, "Firefox")
-    iframe = IFrame(browser, By.TAG_NAME, 'h15')
-    iframe.switch_to_frame()
-
-    time.sleep(2)
-    Element(browser, By.CLASS_NAME, "logo__title").wait_until_visible()
-
-    iframe.switch_to_default_content()
-    browser.shutdown()
 
 if __name__ == "__main__":
     # test_simple_alert()
     # test_confirmation_alert()
     # test_prompt_alert()
     test_iframe()
-    test_iframe_fail()
+
 
 
 
